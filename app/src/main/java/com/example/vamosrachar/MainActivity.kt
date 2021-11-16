@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity(),TextToSpeech.OnInitListener {
                     val val2 = n2.text.toString().toFloat()
                     val div = val1 / val2
                     res!!.text = div.toString()
+                }else{
+                    res!!.text = 0.toString()
                 }
             }
             handled
@@ -47,6 +49,8 @@ class MainActivity : AppCompatActivity(),TextToSpeech.OnInitListener {
                     val val2 = n2.text.toString().toFloat()
                     val div = val1 / val2
                     res!!.text = div.toString()
+                }else{
+                    res!!.text = 0.toString()
                 }
             }
             handled
