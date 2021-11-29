@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(),TextToSpeech.OnInitListener {
 
     override fun onInit(status: Int) {
         if(status == TextToSpeech.SUCCESS){
-            val result = tts!!.setLanguage(Locale.US)
+            val result = tts!!.setLanguage(Locale.getDefault())
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
                 Toast.makeText(this, "not suported", Toast.LENGTH_SHORT).show()
             }else{
