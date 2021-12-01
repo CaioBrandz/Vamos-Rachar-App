@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.*
 
+private var mode:Boolean = false
 
 class MainActivity : AppCompatActivity(),TextToSpeech.OnInitListener {
     private var tts: TextToSpeech? = null
@@ -18,6 +19,12 @@ class MainActivity : AppCompatActivity(),TextToSpeech.OnInitListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (mode == false){
+            setTheme(R.style.Theme_VamosRachar)
+        }
+        else setTheme(R.style.Theme_VamosRacharAcessivel)
+
         setContentView(R.layout.activity_main)
 
         val n1 = findViewById<EditText>(R.id.editNumber1)
@@ -25,6 +32,13 @@ class MainActivity : AppCompatActivity(),TextToSpeech.OnInitListener {
         res = findViewById(R.id.res)
         val share = findViewById<FloatingActionButton>(R.id.ShareButton)
         speaker = findViewById(R.id.speakerButton)
+        val constrast = findViewById<FloatingActionButton>(R.id.contrastButton)
+
+
+        constrast.setOnClickListener{
+            mode = mode == false
+            recreate()
+        }
 
         n1.setOnKeyListener { v, keyCode, event ->
             var handled = false
@@ -57,12 +71,12 @@ class MainActivity : AppCompatActivity(),TextToSpeech.OnInitListener {
         }
 
         share.setOnClickListener{
+
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_TEXT, res!!.text.toString())
                 type = "text/plain"
             }
-
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
         }

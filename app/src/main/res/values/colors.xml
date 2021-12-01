@@ -9,4 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_strong">#1060AB</color>
     <color name="blue">#51A4F1</color>
+
+    <declare-styleable name="dt">
+        <attr name="bg" format="color"/>
+        <attr name="textTitle" format="color"/>
+        <attr name="text" format="color"/>
+        <attr name="textHint" format="color"/>
+        <attr name="textLine" format="color"/>
+    </declare-styleable>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E1414"
+    android:background="?attr/bg"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-medium"
         android:text="0"
-        android:textColor="@color/white"
+        android:textColor="?attr/textTitle"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/londrina_solid"
         android:text="@string/title_vamos_rachar"
-        android:textColor="@color/white"
+        android:textColor="?attr/textTitle"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,14 +44,15 @@
         app:backgroundTint="@color/blue"
         app:fabCustomSize="110dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/speakerButton"
         app:maxImageSize="50dp"
         app:rippleColor="@color/blue_strong"
         app:srcCompat="?attr/actionModeShareDrawable"
         app:tint="@color/white"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:focusable="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/speakerButton"
@@ -64,14 +65,15 @@
         app:backgroundTint="@color/blue"
         app:fabCustomSize="110dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/constraintLayout"
         app:maxImageSize="50dp"
         app:rippleColor="@color/blue_strong"
         app:srcCompat="@android:drawable/ic_lock_silent_mode_off"
         app:tint="@color/white"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:focusable="true" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -79,7 +81,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -99,13 +101,13 @@
             android:id="@+id/editNumber1"
             android:layout_width="321dp"
             android:layout_height="100dp"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="?attr/textLine"
             android:ems="10"
             android:hint="@string/insira_o_valor"
             android:inputType="number"
             android:minHeight="48dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/blue"
+            android:textColor="?attr/text"
+            android:textColorHint="?attr/textHint"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -121,7 +123,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
@@ -141,18 +143,37 @@
             android:id="@+id/editNumber2"
             android:layout_width="325dp"
             android:layout_height="100dp"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="?attr/textLine"
             android:ems="10"
             android:hint="@string/insira_o_numero"
             android:inputType="number"
             android:minHeight="48dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/blue"
+            android:textColor="?attr/text"
+            android:textColorHint="?attr/textHint"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/contrastButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="@string/alto_contraste"
+        android:tint="@color/white"
+        app:backgroundTint="@color/blue"
+        app:fabCustomSize="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/speakerButton"
+        app:maxImageSize="50dp"
+        app:srcCompat="@drawable/ic_accessibility_24"
+        app:tint="@color/white"
+        tools:ignore="ImageContrastCheck"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
